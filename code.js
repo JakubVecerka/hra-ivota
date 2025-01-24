@@ -1,16 +1,16 @@
 let rows = 15;
 let cols = 15;
-let cellSize = 20; // Default size of each cell in pixels
+let cellSize = 20;
 let playing = false;
 
 let timer;
 let reproductionTime = 500;
-let standardRules = true; // Default rule set
+let standardRules = true; 
 
 let grid = new Array(rows);
 let nextGrid = new Array(rows);
 
-let currentSkin = 'skin1'; // Default skin
+let currentSkin = 'skin1';
 
 document.addEventListener('DOMContentLoaded', () => {
     createTable();
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupResolutionControls();
     setupCellSizeControl();
     setupRuleToggle();
-    setupSkinToggle(); // Setup skin toggle buttons
+    setupSkinToggle();
 });
 
 function setupSkinToggle() {
@@ -36,10 +36,9 @@ function setupSkinToggle() {
 }
 
 function applySkin() {
-    // Clear current skin classes and apply the selected one
     document.body.classList.remove('skin1', 'skin2');
     document.body.classList.add(currentSkin);
-    updateView(); // Reapply the grid colors after skin change
+    updateView();
 }
 
 function setupRuleToggle() {
@@ -99,7 +98,7 @@ function setupResolutionControls() {
 function setupCellSizeControl() {
     document.querySelector('#small').onclick = () => {
         cellSize = 10;
-        createTable(); // Recreate the table with the new cell size
+        createTable();
     };
 
     document.querySelector('#medium').onclick = () => {
@@ -191,12 +190,12 @@ function applyRules(i, j) {
     let currentState = grid[i][j];
     if (currentState === 1) {
         if (neighbors < 2 || neighbors > 3) {
-            nextGrid[i][j] = 0; // Cell dies
+            nextGrid[i][j] = 0;
         } else {
-            nextGrid[i][j] = 1; // Cell remains alive
+            nextGrid[i][j] = 1; 
         }
     } else if (currentState === 0 && neighbors === 3) {
-        nextGrid[i][j] = 1; // Cell becomes alive
+        nextGrid[i][j] = 1; 
     }
 }
 
