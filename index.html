@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Game of Life</title>
+  <script src="code.js"></script>
+  <link rel="stylesheet" href="life.css" />
+</head>
+<body>
+  <div id="gridContainer"></div>
+
+  <div class="controls">
+    <button id="start">Start</button>
+    <button id="clear">Clear</button>
+    <button id="random">Random</button>
+  </div>
+
+  <div class="resolution-controls">
+    <input type="number" id="rowsInput" placeholder="Řádky" />
+    <input type="number" id="colsInput" placeholder="Sloupce" />
+    <button id="applyResolution">Použít</button>
+  </div>
+
+  <div class="cell-size-controls">
+    <button id="small">Malá</button>
+    <button id="medium">Střední</button>
+    <button id="large">Velká</button>
+  </div>
+
+  <div class="rule-toggle">
+    <button id="standardRules" class="rule-button">Standardní Pravidla</button>
+    <button id="customRules" class="rule-button">Custom Pravidla</button>
+  </div>
+
+  <div class="skin-toggle">
+    <button id="skin1">Skin 1</button>
+    <button id="skin2">Skin 2</button>
+  </div>
+</body>
+</html>
